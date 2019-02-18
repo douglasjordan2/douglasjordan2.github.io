@@ -1,0 +1,168 @@
+body {
+  font-family: "Roboto", Arial, sans-serif;
+
+  .top {
+    .flexbox(column, center, center);
+
+    .services-logo {
+      .flexbox(row, center, center);
+      position: relative;
+
+      .service-img-desktop {
+        z-index: -1;
+
+        @media @phone {
+          width: 200%;
+          height: auto;
+          margin-right: 100vw;
+          margin-top: 35px;
+          display: none;
+        }
+      }
+
+      .service-img-mobile {
+        display: none;
+
+        @media @phone {
+          display: block;
+          width: 100vw;
+        }
+      }
+
+      h1 {
+        position: absolute;
+        top: calc(100% - 35%);
+        right: calc(100% - 31%);
+        z-index: 0;
+        font-size: 4rem;
+        color: @white;
+
+        @media @phone {
+          z-index: 1;
+          left: 20px;
+          top: unset;
+          bottom: 20px;
+          font-size: 3rem; 
+        }
+      }
+    }
+
+    p {
+      width: 1000px;
+      padding: 50px 70px 44px 70px;
+      line-height: 1.6;
+
+      @media @phone {
+        width: 96%;
+        padding: 40px 20px;
+        font-size: 1.1rem;
+      }
+    }
+
+    @media @phone {
+      width: 100%;
+    }
+  }
+
+  main {
+    .btns {
+      .flexbox(row, space-between, flex-start);
+
+      .btn {
+        font-size: 1.2rem;
+        background-color: @white;
+        font-weight: bold;
+        border: 2px solid @black;
+        margin: auto 20px;
+        width: 200px;
+        padding: 13px 0;
+        text-align: center;
+
+        &:hover {
+          background-color: @black;
+          color: @white;
+          cursor: pointer;
+        }
+
+        @media @phone {
+          width: 89%;
+          margin: 10px 0;
+        }
+      }
+
+      @media @phone {
+        .flexbox(column, space-between, center)
+      }
+
+      @media @phone {
+        width: 100%;
+      }
+    }
+
+    .cards {
+      margin: 50px 0;
+
+      .card {
+        padding: 5px 30px;
+
+        h1 {
+          font-size: 1.6rem;
+          font-weight: bold;
+          width: 88%;
+          padding: 10px 0;
+        }
+
+        p {
+          width: 88.5%;
+          font-size: 1rem;
+          line-height: 1.65;
+          width: 50%;
+
+          @media @phone {
+            width: 100%;
+            margin-bottom: 30px;
+          }
+        }
+
+        @media @phone {
+          .flexbox(column, center, center);
+
+          img {
+            margin: 0 auto;
+          }
+        }
+
+        .desktop-card {
+          @media @tablet {
+            max-width: 45%;
+          }
+
+          @media @phone {
+            display: none;
+          }
+        }
+
+        .mobile-card {
+          .mobile-img();
+        }
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .show {
+        .flexbox(row, space-between, center);
+        flex-wrap: wrap;
+      }
+    }
+
+    @media @phone {
+      width: 100%;
+    }
+  }
+
+  @media @phone {
+    max-width: 500px;
+  }
+}

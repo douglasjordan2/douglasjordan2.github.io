@@ -1,0 +1,114 @@
+footer {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: @gray;
+  color: @white;
+  padding: 50px;
+  display: grid;
+  grid-template-rows: 90% 5% 5%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "contact contact location location location"
+    ". . . . ."
+    "cr cr cr cr cr";
+  
+
+  .footer-right {
+    .flexbox(column, flex-start, flex-start);
+    grid-area: contact;
+
+    h3 {
+      padding-top: 5px;
+      font-size: 1.2rem;
+      margin: 3px 5px;
+      letter-spacing: 1px;
+    }
+
+    input {
+      width: 90%;
+      padding: 8px 0;
+      font-size: 1rem;
+      border: 0;
+      border-radius: 3px;
+      margin: 15px 0 10px 0;
+      opacity: 0.8;
+
+      @media @phone {
+        width: 100%;
+        margin: 10px auto;
+        padding: 15px 0;
+      }
+    }
+
+    p {
+      font-size: 0.8rem;
+      opacity: 0.8;
+
+      @media @phone {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .footer-left {
+    .flexbox(row, space-between, center);
+    line-height: 2;
+    grid-area: location;
+
+    .location {
+      height: 100%;
+      padding: 0 10px; 
+
+      h1 {
+        font-size: 1.2rem;
+      }
+      address {
+        font-size: 0.8rem;
+        opacity: 0.8;
+      }
+    }
+
+    @media @phone {
+      flex-wrap: wrap;
+      height: auto;
+      width: 100%;
+
+      .newyork {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      .florida {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      .california {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .copyright {
+    grid-area: cr;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+
+    @media @phone {
+      text-align: left;
+    }
+  }
+
+  @media @phone {
+    .flexbox(row, flex-start, space-between);
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+}
