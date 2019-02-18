@@ -1,0 +1,16 @@
+.flexbox(@dir: none, @justify: none, @align: none) {
+  display: flex;
+  flex-direction: @dir;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.mobile-img() {
+  display: none;
+
+  @media @phone {
+    display: block;
+    width: 90vw;
+    margin: 0 auto;
+  }
+}
