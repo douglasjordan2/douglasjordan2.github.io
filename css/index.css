@@ -51,6 +51,7 @@
   .index .logo .mobile {
     display: block;
     width: 100vw;
+    position: unset;
   }
 }
 .index .logo h1 {
@@ -66,11 +67,17 @@
   letter-spacing: 1.3px;
   text-shadow: -1px 1px white;
 }
+@media (max-width: 800px) {
+  .index .logo h1 {
+    top: 35%;
+    left: 5%;
+  }
+}
 @media (max-width: 500px) {
   .index .logo h1 {
     font-size: 3rem;
     line-height: 1.2;
-    bottom: 20px;
+    top: 35%;
     left: 20px;
   }
 }
@@ -201,6 +208,11 @@
   font-weight: bold;
   align-self: flex-start;
   margin-bottom: -30px;
+}
+@media (max-width: 800px) {
+  .index main .content h2 {
+    margin-left: 2%;
+  }
 }
 @media (max-width: 500px) {
   .index main .content h2 {
@@ -341,6 +353,8 @@
     justify-content: center;
     align-items: center;
     max-width: 100%;
+    margin: 0;
+    z-index: 1;
   }
 }
 @media (max-width: 800px) {
@@ -350,7 +364,7 @@
     margin: 0 auto;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   .index {
     display: flex;
     flex-direction: column;
@@ -365,7 +379,7 @@ header {
   flex-direction: column;
   justify-content: none;
   align-items: center;
-  z-index: 2;
+  z-index: 3;
 }
 header .header-top {
   display: flex;
@@ -376,6 +390,8 @@ header .header-top {
   background-color: #98A4AF;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
 }
 header .header-top h1 {
   font-size: 1.4rem;
@@ -411,6 +427,7 @@ header nav {
   font-size: 4.2rem;
   background-color: #98A4AF;
   opacity: 0;
+  margin: 0;
 }
 header nav #hide-nav {
   position: absolute;
@@ -430,6 +447,11 @@ header nav a {
 }
 header nav a:active {
   color: #000;
+}
+@media (max-width: 500px) {
+  header nav {
+    left: 0;
+  }
 }
 /*------------------------------------*\
 RESET
@@ -568,6 +590,7 @@ table {
 }
 footer {
   max-width: 900px;
+  z-index: 2;
   margin: 0 auto;
   background-color: #828282;
   color: #fff;
@@ -750,6 +773,10 @@ body .top p {
     width: 100%;
   }
 }
+body main {
+  max-width: 900px;
+  margin: 0 auto;
+}
 body main .btns {
   display: flex;
   flex-direction: row;
@@ -874,12 +901,11 @@ body main .cards .show {
 }
 .contact .logo-contact h1 {
   font-size: 3.8rem;
-  left: 20px;
-  bottom: 30px;
+  padding-left: 10%;
 }
 @media (min-width: 800px) {
   .contact .logo-contact h1 {
-    left: 10%;
+    margin: 3% 4%;
   }
 }
 .contact .logo-contact img {
@@ -909,16 +935,18 @@ body main .cards .show {
   margin: 50px 0px 70px 20px;
   font-size: 2.7rem;
   font-weight: bold;
+  padding-left: 12%;
 }
 @media (min-width: 800px) {
   .contact h2 {
     font-size: 2rem;
-    margin: 50px 11%;
+    margin: 50px 5%;
   }
 }
 .contact .contact-main {
   margin: 0 20px;
   display: flex;
+  flex-wrap: wrap;
 }
 .contact .contact-main form {
   display: flex;
@@ -932,12 +960,12 @@ body main .cards .show {
   line-height: 1.3;
 }
 .contact .contact-main form .contact-item {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   padding: 5px 0;
 }
 .contact .contact-main form .email {
   font-size: 1.3rem;
-  width: 100%;
+  width: 90%;
   border-radius: 5px;
   opacity: 0.8;
   border: 1px solid #000;
@@ -951,11 +979,11 @@ body main .cards .show {
   margin-bottom: 30px;
 }
 .contact .contact-main form select {
+  width: 90%;
   font-size: 1.3rem;
   height: 45px;
   background-color: #fff;
   margin-bottom: 20px;
-  width: 100%;
 }
 .contact .contact-main form textarea {
   margin: 10px 0;
@@ -968,7 +996,7 @@ body main .cards .show {
   padding: 5px 0;
 }
 .contact .contact-main form ul li #submit {
-  width: 100%;
+  width: 90%;
   font-size: 1.3rem;
   border: 1px solid #000;
   text-align: center;
@@ -982,15 +1010,17 @@ body main .cards .show {
 }
 @media (min-width: 800px) {
   .contact .contact-main form {
-    margin-right: 10%;
-    width: 40%;
+    margin: 0 5%;
+    width: 50%;
+    flex-direction: column;
   }
 }
 .contact .contact-main .worksites {
   align-self: flex-start;
 }
 .contact .contact-main .worksites h2 {
-  margin: 40px 0 30px 0;
+  margin: 0;
+  padding: 0;
   font-size: 1.5rem;
 }
 @media (min-width: 800px) {
@@ -1042,7 +1072,7 @@ body main .cards .show {
   }
 }
 .about .tabs {
-  margin-top: 5%;
+  margin: 7% 15%;
 }
 .about .tabs h1 {
   font-size: 3rem;
@@ -1058,21 +1088,43 @@ body main .cards .show {
 }
 @media (max-width: 500px) {
   .about .tabs {
+    margin: 0;
     margin-top: 10%;
   }
 }
 .about .cards .card img {
-  height: 50vh;
+  width: 30%;
 }
 @media (max-width: 800px) {
   .about .cards .card img {
-    max-width: 50%;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 500px) {
+  .about .cards .card img {
+    width: 60%;
   }
 }
 @media (max-width: 500px) {
   .about .cards .card h1 {
     margin: 0 0 5% 0;
     font-size: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .about .cards {
+    max-width: 100%;
+    margin: '0 auto';
+    padding: '0';
+  }
+}
+@media (max-width: 500px) {
+  .about {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: '0';
   }
 }
 .projects .tabs {
@@ -1082,8 +1134,19 @@ body main .cards .show {
   font-size: 2rem;
   margin: 5% auto;
 }
+@media (max-width: 500px) {
+  .projects .tabs h1 {
+    font-size: 1.5rem;
+    margin-left: 2%;
+  }
+}
 .projects .tabs .btns .btn .title {
   font-size: 0.8rem;
+}
+@media (max-width: 800px) {
+  .projects .tabs {
+    margin-top: 10%;
+  }
 }
 @media (max-width: 500px) {
   .projects .tabs {

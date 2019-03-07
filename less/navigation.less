@@ -2,7 +2,7 @@ header {
   color: #fff;
   position: relative;
   .flexbox(column, none, center);
-  z-index: 2;
+  z-index: 3;
 
   .header-top {
     .flexbox(row, space-between, none);
@@ -10,6 +10,8 @@ header {
     background-color: @bgcolor;
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
 
     h1 {
       font-size: 1.4rem;
@@ -47,6 +49,7 @@ header {
     font-size: 4.2rem;
     background-color: @bgcolor;
     opacity: 0;
+    margin: 0;
 
     #hide-nav {
       position: absolute;
@@ -69,6 +72,10 @@ header {
 
     a:active {
       color: @black;
+    }
+
+    @media @phone {
+      left: 0;
     }
   }
 }

@@ -1,7 +1,7 @@
 .about {
-
+  
   .tabs {
-    margin-top: 5%;
+    margin: 7% 15%;
 
     h1 {
       font-size: 3rem;
@@ -23,6 +23,7 @@
     }
 
     @media @phone {
+      margin: 0;
       margin-top: 10%;
     }
   }
@@ -32,19 +33,38 @@
     .card {
 
       img {
-        height: 50vh;
+        width: 30%;
 
         @media @tablet {
-          max-width: 50%;
+          width: 50%;
+          height: auto;
+          margin: 0 auto;
+        }
+
+        @media @phone {
+          width: 60%;
         }
       }
 
       h1 {
+
         @media @phone {
           margin: 0 0 5% 0;
           font-size: 2rem;
         }
       }
     }
+
+    @media @phone {
+      max-width: 100%;
+      margin: '0 auto';
+      padding: '0';
+    }
+  }
+
+  @media @phone {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: '0';
   }
 }
